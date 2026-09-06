@@ -1,7 +1,6 @@
 package com.cobaltspiral.employee_creator.employee.entity;
 
-import java.sql.Date;
-
+import java.time.LocalDate;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,10 +38,10 @@ public class Employee {
     private String contractType;
 
     @Column
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column
-    private Date endDate;
+    private LocalDate endDate;
 
     @Column
     private String partTimeOrFullTime;
@@ -79,11 +78,11 @@ public class Employee {
         return contractType;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
@@ -123,11 +122,11 @@ public class Employee {
         this.contractType = contractType;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
