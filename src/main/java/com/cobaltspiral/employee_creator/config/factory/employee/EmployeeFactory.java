@@ -34,8 +34,11 @@ public class EmployeeFactory {
     public Employee create(EmployeeFactoryOptions options) {
         Employee createdEmployee = new Employee();
         createdEmployee.setFirstName(faker.name().firstName());
+        createdEmployee.setMiddleName(faker.name().nameWithMiddle());
         createdEmployee.setLastName(faker.name().lastName());
         createdEmployee.setEmail(faker.internet().emailAddress());
+        createdEmployee.setMobileNumber(faker.phoneNumber().cellPhone().replaceAll("[^0-9]", ""));
+        createdEmployee.setAddress(faker.address().fullAddress());
         this.repo.saveAndFlush(createdEmployee);
         return createdEmployee;
     }
@@ -47,7 +50,7 @@ public class EmployeeFactory {
             Employee created = create(options);
             employees.add(created);
         }
-        
+
         return employees;
     }
 

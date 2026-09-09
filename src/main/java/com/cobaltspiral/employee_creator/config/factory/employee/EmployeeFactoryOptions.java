@@ -6,7 +6,7 @@ public class EmployeeFactoryOptions {
     String middleName;
     String lastName;
     String email;
-    String phoneNumber;
+    Integer mobileNumber;
     String address;
 
     private EmployeeFactoryOptions(Builder builder) {
@@ -14,7 +14,7 @@ public class EmployeeFactoryOptions {
         this.middleName = builder.middleName;
         this.lastName = builder.lastName;
         this.email = builder.email;
-        this.phoneNumber = builder.phoneNumber;
+        this.mobileNumber = builder.mobileNumber;
         this.address = builder.address;
     }
 
@@ -27,7 +27,7 @@ public class EmployeeFactoryOptions {
         private String middleName;
         private String lastName;
         private String email;
-        private String phoneNumber;
+        private Integer mobileNumber;
         private String address;
 
         public Builder firstName(String firstName) {
@@ -50,8 +50,8 @@ public class EmployeeFactoryOptions {
             return this;
         }
 
-        public Builder phoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
+        public Builder mobileNumber(Integer mobileNumber) {
+            this.mobileNumber = mobileNumber;
             return this;
         }
 
