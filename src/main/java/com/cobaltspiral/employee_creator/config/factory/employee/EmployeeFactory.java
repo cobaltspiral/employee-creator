@@ -1,10 +1,14 @@
 package com.cobaltspiral.employee_creator.config.factory.employee;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import com.cobaltspiral.employee_creator.employee.EmployeeRepository;
 import com.cobaltspiral.employee_creator.employee.entity.Employee;
+
 import com.github.javafaker.Faker;
 
 @Component 
@@ -23,6 +27,11 @@ public class EmployeeFactory {
     }
 
     public Employee create() {
+        var opts = EmployeeFactoryOptions.builder().build();
+        return create(opts);
+    }
+
+    public Employee create(EmployeeFactoryOptions options) {
         Employee createdEmployee = new Employee();
         createdEmployee.setFirstName(faker.name().firstName());
         createdEmployee.setLastName(faker.name().lastName());
@@ -30,4 +39,16 @@ public class EmployeeFactory {
         this.repo.saveAndFlush(createdEmployee);
         return createdEmployee;
     }
+
+    public List<Employee> create(EmployeeFactoryOptions options, int n) {
+        ArrayList<Employee> employees = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            Employee created = create(options);
+            employees.add(created);
+        }
+        
+        return employees;
+    }
+
 }

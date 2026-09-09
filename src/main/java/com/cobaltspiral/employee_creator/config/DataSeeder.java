@@ -1,10 +1,12 @@
 package com.cobaltspiral.employee_creator.config;
 
+import com.cobaltspiral.employee_creator.config.factory.employee.EmployeeFactory;
+import com.cobaltspiral.employee_creator.config.factory.employee.EmployeeFactoryOptions;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import com.cobaltspiral.employee_creator.config.factory.employee.EmployeeFactory;
 import com.github.javafaker.Faker;
 
 @Component
@@ -20,8 +22,13 @@ public class DataSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'run'");
+        
+        if (employeeFactory.repoEmpty()) {
+            int n = faker.random().nextInt(10, 20);
+            EmployeeFactoryOptions options = EmployeeFactoryOptions.builder().build();
+            for (int i = 0; i < n; i++) {
+                employeeFactory.create(options);
+            }
+        }
     }
-
 }
