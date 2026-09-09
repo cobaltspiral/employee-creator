@@ -34,18 +34,6 @@ public class Employee {
     @Column
     private String address;
 
-    @Column
-    private String contractType;
-
-    @Column
-    private LocalDate startDate;
-
-    @Column
-    private LocalDate endDate;
-
-    @Column
-    private String partTimeOrFullTime;
-
     public Long getId() {
         return id;
     }
