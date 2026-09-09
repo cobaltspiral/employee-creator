@@ -19,7 +19,7 @@ public record EmployeeResponseDTO(
             employee.getLastName(),
             employee.getEmail(),
             employee.getMobileNumber(),
-            employee.getAddress();
+            employee.getAddress()
         );
     }
 
@@ -28,5 +28,3 @@ public record EmployeeResponseDTO(
             .map(EmployeeResponseDTO::fromEntity)
             .toList();
     }
-
-}
