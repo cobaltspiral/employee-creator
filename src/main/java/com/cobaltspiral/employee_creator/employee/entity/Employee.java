@@ -62,22 +62,6 @@ public class Employee {
         return address;
     }
 
-    public String getContractType() {
-        return contractType;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public String getPartTimeOrFullTime() {
-        return partTimeOrFullTime;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -105,25 +89,5 @@ public class Employee {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    public void setContractType(String contractType) {
-        this.contractType = contractType;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    public void setPartTimeOrFullTime(String partTimeOrFullTime) {
-        this.partTimeOrFullTime = partTimeOrFullTime;
-    }
-
-    
-    
-
 
 }
