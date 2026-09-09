@@ -1,5 +1,8 @@
 package com.cobaltspiral.employee_creator.employee.DTOs;
 
+import java.util.List;
+
+import com.cobaltspiral.employee_creator.employee.entity.Employee;
 
 public record EmployeeResponseDTO(
     Long id,
@@ -28,3 +31,4 @@ public record EmployeeResponseDTO(
             .map(EmployeeResponseDTO::fromEntity)
             .toList();
     }
+}
